@@ -19,7 +19,10 @@ first to remove all driver I have installed before using :
 ```sudo apt install libnividia-gl-535```
 ### install the final driver
 ```sudo apt install nvidia-driver-535```
-### final
+### Check & update PATH
 - reboot and check ```nvidia-smi```
 - ```nvcc --version``` should not work (in your bashrc file you don't have the path to cuda). To fix this, 
   - ```sudo nano /etc/bash.bashrc``` and append ```export PATH="/usr/local/cuda/bin:$PATH"``` at the end (system wide bashrc config)
+
+### Update nvidia-container-toolkit
+https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#step-1-install-nvidia-container-toolkit

@@ -5,4 +5,4 @@
 ## Docker
 In this folder you will find a general purpose docker image, as well as tutorials for using and composing your container
 - `docker/docker.md` for general tutorials
-- `Dockerfile_<properties>` the dockerfile for the general purpose image
+- `docker/Dockerfile_<properties>` the dockerfile for the general purpose image

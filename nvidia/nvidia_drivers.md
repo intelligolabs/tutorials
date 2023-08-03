@@ -20,4 +20,6 @@ first to remove all driver I have installed before using :
 ### install the final driver
 ```sudo apt install nvidia-driver-535```
 ### final
-reboot and check ```nvidia-smi```
+- reboot and check ```nvidia-smi```
+- ```nvcc --version``` should not work (in your bashrc file you don't have the path to cuda). To fix this, 
+  - ```sudo nano /etc/bash.bashrc``` and append ```export PATH="/usr/local/cuda/bin:$PATH"``` at the end (system wide bashrc config)

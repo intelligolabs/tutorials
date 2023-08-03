@@ -30,7 +30,7 @@ docker run --detach-keys="ctrl-\\,ctrl-\\" --privileged --gpus all -d -v ~:/home
 docker build -t cuda:11.8 .
 ```
 ```
-docker run --privileged --gpus all -d -v ~:/home/$USER -v /media/data:/media/data --detach-keys="ctrl-\\,ctrl-\\" --name test cuda:11.8 
+docker run --privileged --gpus all -itd -v ~:/home/$USER -v /media/data:/media/data --detach-keys="ctrl-\\,ctrl-\\" --name test cuda:11.8
 ```
 These commands will build an image called `cuda:11.8` and start a container called `test` using the image. They will mount your home folder and the /media/data folder.
 
@@ -41,10 +41,19 @@ These commands will build an image called `cuda:11.8` and start a container call
 1. Once inside the container, install all the extensions you need.
 1. Open the folder with the code you want to work on.
 
-Additionally, you can setup VSCode so that it automatically opens a folder when attaching to a container. To do so, in VSCode once you are attached to the container, open the `command palette` (`F1`) and select `Dev Containers: Open Named Container Configuration File`. Paste the following parameters in the opened `<container_name>.json` file
+Additionally, you can setup VSCode so that it automatically opens a folder when attaching to a container, and installs the extensions you need. To do so, once you are attached to the container in VSCode, open the `command palette` (`F1`) and select `Dev Containers: Open Named Container Configuration File`. Paste the following parameters in the opened `<container_name>.json` file
 ```
 {
     "workspaceFolder": "/path/to/your/code",
+    "extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"ms-toolsai.jupyter",
+		"ms-toolsai.jupyter-keymap",
+		"ms-toolsai.jupyter-renderers",
+		"ms-toolsai.vscode-jupyter-cell-tags",
+		"ms-toolsai.vscode-jupyter-slideshow"
+	],
 }
 ```
 Then, open the `command palette` (`F1`) and select `Dev Containers: Open Container Configuration File`. Remove the `workspaceFolder` line. You can leave the others.

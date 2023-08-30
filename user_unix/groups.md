@@ -20,7 +20,11 @@ sudo usermod -a -G <group_name> <user_name>
 ```
 Then you need to log out and log back in that user
 ```
-su <user_name>
+exit
+```
+Sometimes it may be necessary to reboot the machine
+```
+sudo shutdown -r now
 ```
 Finally, to check that everything worked, you can check the groups of that user with:
 ```

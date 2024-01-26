@@ -2,7 +2,7 @@
 In this folder you can find different dockerfiles for different purposes.
 The general purpose images are based on the official Nvidia image `nvcr.io/nvidia/cuda:<version>` and are useful if you need a specific cuda version. These images come with pre-installed conda, tmux and htop, as well as cuda toolkit and cudnn.
 ## Pre-requisites
-- VSCode, with DevContainer extension
+- VSCode, with DevContainer extension [here](https://code.visualstudio.com/docs/devcontainers/tutorial)
 - Docker
 - Nvidia drivers
 - Nvidia-container-toolkit
